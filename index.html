@@ -165,11 +165,8 @@
                 <h3 class="widget-title">Sledujte môj blog</h3>
                 <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--text-muted);">Napíšte mi svoj e-mail a budem vás informovať, keď vydám nový text. Žiadny spam.</p>
                 
-                <form id="subscribeForm" action="https://formsubmit.co/jakubnaod34@gmail.com" method="POST">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_subject" value="Nový odberateľ blogu!">
-                    
-                    <input type="email" name="email" id="emailInput" placeholder="Váš e-mail" required>
+                <form id="subscribeForm">
+                    <input type="email" id="emailInput" placeholder="Váš e-mail" required>
                     <button type="submit" id="submitBtn">Odoberať články</button>
                     
                     <div id="successMessage" style="display: none; color: #15803d; font-weight: bold; margin-top: 15px; text-align: center; animation: fadeIn 0.5s; background: #dcfce7; padding: 10px; border-left: 4px solid #16a34a;">
@@ -193,21 +190,28 @@
         const msg = document.getElementById('successMessage');
         const emailInput = document.getElementById('emailInput');
 
-        form.addEventListener('submit', function(e) {
-            e.preventDefault(); // Zastaví klasické odoslanie, aby sa neobnovila stránka
+        // TVOJ DISCORD WEBHOOK LINK
+        const discordWebhookUrl = 'https://discord.com/api/webhooks/1483544449140265171/Qd_O2FTIoXDv31Kcj3bOs74XUFFXViQnCq4DZ4YJ1uDVP9N-hgIrB5oRHlBwRbD5IwyS';
 
-            // Animácia tlačidla
+        form.addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            const emailValue = emailInput.value;
             btn.innerHTML = 'Odosielam... <span class="spin-icon">⏳</span>';
             btn.disabled = true;
 
-            // Odoslanie e-mailu na pozadí
-            fetch(form.action, {
+            const payload = {
+                content: `🚨 **Nový odberateľ na webe (Z hlavnej stránky)!**\nE-mail: \`${emailValue}\``
+            };
+
+            fetch(discordWebhookUrl, {
                 method: 'POST',
-                body: new FormData(form),
-                headers: { 'Accept': 'application/json' }
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
             }).then(response => {
                 if (response.ok) {
-                    // Ak prešlo úspešne, skryjeme formulár a ukážeme zelenú správu
                     btn.style.display = 'none';
                     emailInput.style.display = 'none';
                     msg.style.display = 'block';
