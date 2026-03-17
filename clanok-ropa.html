@@ -32,7 +32,6 @@
         a { text-decoration: none; color: inherit; transition: all 0.2s ease; }
         h1, h2, h3, h4 { font-family: var(--font-heading); text-transform: uppercase; }
         
-        /* HLAVIČKA */
         header { position: fixed; top: 0; width: 100%; background: var(--bg-white); box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; padding: 0 5%; display: flex; justify-content: space-between; align-items: center; height: 70px; border-top: 4px solid var(--brand-dark-blue); }
         .logo { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 900; color: var(--brand-dark-blue); }
         .logo span { color: var(--brand-red); }
@@ -40,13 +39,11 @@
         nav a { font-weight: 600; font-size: 0.9rem; color: var(--brand-dark-blue); text-transform: uppercase; display: flex; align-items: center; height: 70px; border-bottom: 3px solid transparent; }
         nav a:hover { border-bottom-color: var(--brand-light-blue); color: var(--brand-light-blue); }
 
-        /* ROZLOŽENIE PODSTRÁNKY */
         .container { max-width: 1200px; margin: 120px auto 50px auto; padding: 0 5%; display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; }
         
         .main-content { flex: 1; min-width: 60%; }
         .sidebar { width: 340px; flex-shrink: 0; }
 
-        /* DETAIL ČLÁNKU */
         .post-article { background: var(--bg-white); border: 1px solid var(--border-color); border-top: 4px solid var(--brand-red); padding: 0; margin-bottom: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
         
         .post-image-container { position: relative; width: 100%; }
@@ -66,23 +63,24 @@
         .btn-back { display: inline-flex; align-items: center; gap: 8px; background: var(--bg-page); color: var(--brand-dark-blue); padding: 12px 25px; font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; text-transform: uppercase; border: 1px solid var(--border-color); margin-top: 30px; transition: all 0.2s; }
         .btn-back:hover { background: var(--brand-dark-blue); color: #fff; border-color: var(--brand-dark-blue); }
 
-        /* WIDGETY / BOČNÝ PANEL */
         .widget { background: var(--bg-white); border: 1px solid var(--border-color); padding: 30px; margin-bottom: 30px; border-top: 4px solid var(--brand-dark-blue); }
         .widget-title { font-size: 1.2rem; color: var(--brand-dark-blue); margin-bottom: 20px; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; }
         
-        .about-widget img { width: 100%; height: auto; border: 1px solid var(--border-color); margin-bottom: 15px; }
         .about-widget p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 12px; line-height: 1.6; }
         .about-widget strong { color: var(--text-main); }
         
         .newsletter-widget input { width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid var(--border-color); font-family: var(--font-body); }
         .newsletter-widget button { width: 100%; padding: 12px; background: var(--brand-red); color: white; border: none; font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; cursor: pointer; transition: background 0.3s; }
         .newsletter-widget button:hover { background: #b51f15; }
+        .newsletter-widget button:disabled { background: #94a3b8; cursor: not-allowed; }
 
-        /* PÄTIČKA */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
+        @keyframes spin { 100% { transform: rotate(360deg); } }
+        .spin-icon { display: inline-block; animation: spin 1s linear infinite; margin-left: 8px; }
+
         footer { background: #003366; color: #a0aec0; text-align: center; padding: 30px 5%; font-size: 0.9rem; border-top: 4px solid var(--brand-light-blue); margin-top: 50px; }
         footer strong { color: var(--bg-white); }
 
-        /* RESPONZIVITA */
         @media (max-width: 900px) {
             .container { flex-direction: column; }
             .sidebar { width: 100%; }
@@ -171,22 +169,29 @@
             
             <div class="widget about-widget">
                 <h3 class="widget-title">O autorovi</h3>
-                <img src="https://via.placeholder.com/300x300/e1e8f0/333333?text=Fotka+Jakuba" alt="Jakub Naod">
-                <p><strong>Volám sa Jakub Naod.</strong> Som z Prievidze a rozhodol som sa vstúpiť do verejného priestoru, pretože sa už nedokážem ticho prizerať, kam naša spoločnosť smeruje.</p>
-                <p>Môj príbeh je príbehom radikálneho precitnutia. Ešte donedávna som bol presvedčený liberál. Veril som mainstreamu, podporoval progresívne myšlienky aj Ukrajinu.</p>
-                <p>V roku <strong>2024</strong> som vycestoval do Európskeho parlamentu v Štrasburgu. Očakával som riešenia, no pri diskusiách s političkami prišiel prvý šok. Naše ekonomické záujmy tam nikoho nezaujímajú, rieši sa len ideológia. Trvalo mi viac ako rok, kým som si to všetko v hlave upratal. <strong>Definitívny zlom k mojim súčasným pravicovým názorom prišiel nedávno, v januári 2026.</strong></p>
-                <p>Odmietam nezmyselný Green Deal, ideologickú propagandu v školách, diktát Bruselu aj cudzie vojny. Bojujem za suverenitu, tradičné hodnoty a silnú ekonomiku pre domácich. <strong>Som hrdým podporovateľom hnutia Republika.</strong></p>
+                <p>Volám sa <strong>Jakub Naod</strong> a rozhodol som sa vstúpiť do verejného priestoru, pretože už nedokážem ticho sledovať, kam sa naša spoločnosť posúva.</p>
+                <p>Môj príbeh je príbehom precitnutia. Ešte donedávna som veril tomu, čo som počul okolo seba – veril som mainstreamu, stál som na strane progresívnych myšlienok a vnímal svet cez optiku, ktorú mi ponúkali médiá a okolie.</p>
+                <p>Postupne som si však začal všímať, že realita je iná. Že sa čoraz viac rieši ideológia namiesto skutočných problémov ľudí. Že sa potláča diskusia, spochybňuje zdravý rozum a ignorujú sa ekonomické a sociálne dopady rozhodnutí, ktoré prichádzajú zhora.</p>
+                <p>Trvalo mi určitý čas, kým som si veci v hlave usporiadal. Nebol to rýchly ani jednoduchý proces. No dnes mám jasno.</p>
+                <p>Odmietam nezmyselné experimenty na spoločnosti, ktoré ohrozujú našu ekonomiku aj budúcnosť mladých. Odmietam ideologickú manipuláciu v školách, tlak zvonku na naše rozhodovanie aj zasahovanie do našej suverenity.</p>
+                <p>Verím v silný štát, ktorý stojí na vlastných nohách. V tradičné hodnoty, ktoré držia spoločnosť pokope. A v ekonomiku, ktorá slúži ľuďom doma, nie cudzím záujmom.</p>
+                <p>Som hrdým podporovateľom hnutia Republika a chcem byť hlasom tých, ktorí majú pocit, že ich dnes nikto nepočúva.</p>
             </div>
 
             <div class="widget newsletter-widget" id="kontakt">
                 <h3 class="widget-title">Sledujte môj blog</h3>
                 <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--text-muted);">Napíšte mi svoj e-mail a budem vás informovať, keď vydám nový text. Žiadny spam.</p>
                 
-                <form action="#">
-                    <input type="email" placeholder="Váš e-mail" required>
-                    <button type="submit">Odoberať články</button>
+                <form id="subscribeFormArticle">
+                    <input type="email" id="emailInputArticle" placeholder="Váš e-mail" required>
+                    <button type="submit" id="submitBtnArticle">Odoberať články</button>
+                    
+                    <div id="successMessageArticle" style="display: none; color: #15803d; font-weight: bold; margin-top: 15px; text-align: center; animation: fadeIn 0.5s; background: #dcfce7; padding: 10px; border-left: 4px solid #16a34a;">
+                        ✅ Úspešne prihlásené k odberu!
+                    </div>
                 </form>
-                </div>
+
+            </div>
 
         </aside>
 
@@ -195,6 +200,48 @@
     <footer>
         <p><strong>Jakub Naod</strong> &copy; 2026. Bez cenzúry. Vstup do verejného priestoru.</p>
     </footer>
+
+    <script>
+        const formArticle = document.getElementById('subscribeFormArticle');
+        const btnArticle = document.getElementById('submitBtnArticle');
+        const msgArticle = document.getElementById('successMessageArticle');
+        const emailInputArticle = document.getElementById('emailInputArticle');
+
+        // TVOJ DISCORD WEBHOOK LINK
+        const discordWebhookUrlArticle = 'https://discord.com/api/webhooks/1483544449140265171/Qd_O2FTIoXDv31Kcj3bOs74XUFFXViQnCq4DZ4YJ1uDVP9N-hgIrB5oRHlBwRbD5IwyS';
+
+        formArticle.addEventListener('submit', function(e) {
+            e.preventDefault(); 
+
+            const emailValue = emailInputArticle.value;
+            btnArticle.innerHTML = 'Odosielam... <span class="spin-icon">⏳</span>';
+            btnArticle.disabled = true;
+
+            const payload = {
+                content: `🚨 **Nový odberateľ na webe (Z článku o rope)!**\nE-mail: \`${emailValue}\``
+            };
+
+            fetch(discordWebhookUrlArticle, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            }).then(response => {
+                if (response.ok) {
+                    btnArticle.style.display = 'none';
+                    emailInputArticle.style.display = 'none';
+                    msgArticle.style.display = 'block';
+                } else {
+                    btnArticle.innerHTML = 'Chyba. Skúste znova.';
+                    btnArticle.disabled = false;
+                }
+            }).catch(error => {
+                btnArticle.innerHTML = 'Chyba spojenia.';
+                btnArticle.disabled = false;
+            });
+        });
+    </script>
 
 </body>
 </html>
