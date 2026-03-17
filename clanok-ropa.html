@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Prečo platíme za ropu šialené ceny? | Jakub Naod</title>
+    <meta name="description" content="Účet za americkú vojnu, odpojenú Družbu a progresívnu naivitu. Čítajte na blogu Jakuba Naoda.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-dark-blue: #004e96; 
+            --brand-light-blue: #009ee3; 
+            --brand-red: #da291c; 
+            
+            --bg-page: #f5f8fa; 
+            --bg-white: #ffffff;
+            --text-main: #333333;
+            --text-muted: #475569;
+            --border-color: #e1e8f0;
+            
+            --font-heading: 'Roboto', sans-serif;
+            --font-body: 'Open Sans', sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background-color: var(--bg-page); color: var(--text-main); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; transition: all 0.2s ease; }
+        h1, h2, h3, h4 { font-family: var(--font-heading); text-transform: uppercase; }
+        
+        /* HLAVIČKA */
+        header { position: fixed; top: 0; width: 100%; background: var(--bg-white); box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; padding: 0 5%; display: flex; justify-content: space-between; align-items: center; height: 70px; border-top: 4px solid var(--brand-dark-blue); }
+        .logo { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 900; color: var(--brand-dark-blue); }
+        .logo span { color: var(--brand-red); }
+        nav ul { display: flex; gap: 20px; list-style: none; height: 100%; }
+        nav a { font-weight: 600; font-size: 0.9rem; color: var(--brand-dark-blue); text-transform: uppercase; display: flex; align-items: center; height: 70px; border-bottom: 3px solid transparent; }
+        nav a:hover { border-bottom-color: var(--brand-light-blue); color: var(--brand-light-blue); }
+
+        /* ROZLOŽENIE PODSTRÁNKY */
+        .container { max-width: 1200px; margin: 120px auto 50px auto; padding: 0 5%; display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; }
+        
+        .main-content { flex: 1; min-width: 60%; }
+        .sidebar { width: 340px; flex-shrink: 0; }
+
+        /* DETAIL ČLÁNKU */
+        .post-article { background: var(--bg-white); border: 1px solid var(--border-color); border-top: 4px solid var(--brand-red); padding: 0; margin-bottom: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
+        
+        .post-image-container { position: relative; width: 100%; }
+        .post-image { width: 100%; height: auto; max-height: 500px; object-fit: cover; display: block; }
+        .image-caption { display: block; font-size: 0.75rem; color: var(--text-muted); text-align: right; padding: 8px 15px; background: #f9fbfd; border-bottom: 1px solid var(--border-color); font-style: italic; }
+
+        .post-body { padding: 40px; }
+        .post-meta { font-size: 0.85rem; color: var(--brand-light-blue); font-weight: 700; text-transform: uppercase; margin-bottom: 15px; display: flex; gap: 15px; }
+        .post-meta span { color: var(--text-muted); }
+        .post-title { font-size: 2.5rem; color: var(--brand-dark-blue); margin-bottom: 25px; line-height: 1.2; letter-spacing: -0.5px; }
+        .post-lead { font-size: 1.15rem; font-weight: 600; color: var(--text-main); margin-bottom: 35px; line-height: 1.7; border-left: 4px solid var(--brand-red); padding-left: 20px; }
+        
+        .post-content h3 { font-size: 1.6rem; color: var(--brand-dark-blue); margin: 40px 0 15px 0; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; }
+        .post-content p { margin-bottom: 20px; font-size: 1.1rem; color: var(--text-main); line-height: 1.8; }
+        .post-content strong { color: var(--brand-dark-blue); }
+
+        .btn-back { display: inline-flex; align-items: center; gap: 8px; background: var(--bg-page); color: var(--brand-dark-blue); padding: 12px 25px; font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; text-transform: uppercase; border: 1px solid var(--border-color); margin-top: 30px; transition: all 0.2s; }
+        .btn-back:hover { background: var(--brand-dark-blue); color: #fff; border-color: var(--brand-dark-blue); }
+
+        /* WIDGETY / BOČNÝ PANEL */
+        .widget { background: var(--bg-white); border: 1px solid var(--border-color); padding: 30px; margin-bottom: 30px; border-top: 4px solid var(--brand-dark-blue); }
+        .widget-title { font-size: 1.2rem; color: var(--brand-dark-blue); margin-bottom: 20px; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; }
+        
+        .about-widget img { width: 100%; height: auto; border: 1px solid var(--border-color); margin-bottom: 15px; }
+        .about-widget p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 12px; line-height: 1.6; }
+        .about-widget strong { color: var(--text-main); }
+        
+        .newsletter-widget input { width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid var(--border-color); font-family: var(--font-body); }
+        .newsletter-widget button { width: 100%; padding: 12px; background: var(--brand-red); color: white; border: none; font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; cursor: pointer; transition: background 0.3s; }
+        .newsletter-widget button:hover { background: #b51f15; }
+
+        /* PÄTIČKA */
+        footer { background: #003366; color: #a0aec0; text-align: center; padding: 30px 5%; font-size: 0.9rem; border-top: 4px solid var(--brand-light-blue); margin-top: 50px; }
+        footer strong { color: var(--bg-white); }
+
+        /* RESPONZIVITA */
+        @media (max-width: 900px) {
+            .container { flex-direction: column; }
+            .sidebar { width: 100%; }
+        }
+        @media (max-width: 768px) {
+            header { height: auto; flex-direction: column; padding: 15px; gap: 10px; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; height: auto; }
+            nav a { height: auto; padding: 5px 0; border: none; }
+            .container { margin-top: 150px; }
+            .post-body { padding: 25px; }
+            .post-title { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><a href="index.html">Jakub <span>Naod</span></a></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Najnovšie texty</a></li>
+                <li><a href="index.html#kto-som">O autorovi</a></li>
+                <li><a href="index.html#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        
+        <main class="main-content">
+            
+            <article class="post-article">
+                
+                <div class="post-image-container">
+                    <img src="https://cdn.sita.sk/sites/32/2022/03/gettyimages-1188513647-768x512.jpg" alt="Ilustračné foto - ropa" class="post-image">
+                    <span class="image-caption">Foto: ilustračné, www.gettyimages.com.</span>
+                </div>
+                
+                <div class="post-body">
+                    <div class="post-meta">
+                        <span class="post-category">Geopolitika a Ekonomika</span>
+                        <span>17. Marec 2026</span>
+                    </div>
+                    
+                    <h1 class="post-title">Prečo platíme za ropu šialené ceny? Účet za americkú vojnu, odpojenú Družbu a progresívnu naivitu.</h1>
+                    
+                    <div class="post-lead">
+                        Politici a médiá nám neustále opakujú, že sa musíme uskromniť. Že drahší benzín, likvidačné ceny energií a astronomická inflácia sú „daňou za solidaritu a našu bezpečnosť“. Poďme sa však na túto ich solidaritu pozrieť bez ružových okuliarov a cenzúry. Výsledok? Je to ekonomická samovražda v priamom prenose, ktorú nám naordinovali cudzí aktéri.
+                    </div>
+
+                    <div class="post-content">
+                        <p>Žijeme v systéme, ktorý nás roky presviedčal, že odstrihnutie sa od ruských energií je nielen našou morálnou povinnosťou, ale dokonca aj ekonomickou výhrou. Úradníci v Bruseli a naši domáci progresívci si tlieskali, akí sme zásadoví. Ale poďme sa baviť o tvrdej realite dnešných dní, pretože účty na konci mesiaca neplatíme ideológiou, ale reálnymi peniazmi. A tie peniaze nám dnes z peňaženiek ťahá geopolitické šialenstvo, do ktorého nás zatiahli.</p>
+
+                        <h3>Americká vojna v Iráne a globálny šok</h3>
+                        <p>Začnime tým najaktuálnejším, o čom sa mainstream snaží hovoriť len veľmi opatrne, aby nenarušil obraz nášho "najväčšieho spojenca". Koncom februára Spojené štáty a Izrael spustili masívny vojenský útok na Irán. Výsledok tejto americkej zahraničnej politiky? Ceny ropy na svetových trhoch vystrelili do nebies.</p>
+                        <p>Hormuzský prieliv, cez ktorý prúdi pätina svetovej ropy, je paralyzovaný, dodávateľské reťazce kolabujú a trhy panikária. Zatiaľ čo americkí zbrojári a špekulanti počítajú zisky, bežný Slovák platí túto vojnu z vlastného vrecka zakaždým, keď chytí do ruky tankovaciu pištoľ. Liberálny tábor nám roky tvrdil, že nákupom ruskej ropy "financujeme vojnu". Kde sú títo moralisti dnes, keď naša vynútená závislosť na západných a blízkovýchodných trhoch priamo dopláca na americké vojenské ťaženie? Zrazu je hrobové ticho.</p>
+
+                        <h3>Odstavená Družba: Sabotáž našej ekonomiky</h3>
+                        <p>Aby toho nebolo málo, my sme si našu jedinú stabilnú a lacnú alternatívu nechali doslova odrezať. Od konca januára je ropovod Družba, naša kľúčová tepna, nefunkčný. Na Slovensko a do Maďarska netečie ani kvapka.</p>
+                        <p>A čo sa deje? Kyjev sa vyhovára, opravy sa naťahujú a nepúšťajú k ropovodu nezávislých expertov. Je to čisté politické vydieranie a sabotáž našej domácej ekonomiky. Namiesto toho, aby sme tvrdo buchli po stole a žiadali okamžitú nápravu, Brusel sa len nečinne prizerá a naši progresívni politici by najradšej na Ukrajinu poslali ďalšie ďakovné listy. Naše rafinérie, ako bratislavský Slovnaft, sú technologicky nastavené presne na túto ťažkú ropu. Jej odstavenie nie je "zelené víťazstvo", je to cielený útok na náš priemysel.</p>
+
+                        <h3>Tvrdé čísla: Urals verzus Brent a šialená logistika</h3>
+                        <p>Ak si dnes otvoríte globálne trhy, uvidíte jasnú matematiku. Zatiaľ čo európsky štandard, ropa Brent (ktorá je hnaná do extrémov americkým konfliktom s Iránom), sa obchoduje na úrovni zhruba <strong>87,70 EUR za barel</strong>, ruská ropa Urals stojí približne <strong>81,50 EUR</strong>.</p>
+                        <p>Možno si niekto povie – rozdiel šesť eur na bareli predsa prežijeme. Ale tu sa európske klamstvo len začína. Tých šesť eur je totiž len cena samotnej suroviny na papieri. Ten skutočný, devastačný účet pre našu ekonomiku sa skrýva v <strong>logistike, doprave a zničených technológiách</strong>.</p>
+                        <p>Pretože je Družba nefunkčná, sme nútení nakupovať tú drahšiu ropu, ktorú musíme ťahať tankermi cez polovicu zemegule – a to rovno cez zóny, kde momentálne zúri vojna! Platíme za obrovské transportné náklady, za šialene drahé vojnové poistenie lodí, za zložitú prekládku v prístavoch a následný transport vlakmi. V konečnom dôsledku nepreplácame len tých pár eur na bareli, ale financujeme masívne predraženú a neefektívnu reťaz, ktorú sme si sami nasilu vytvorili.</p>
+
+                        <h3>Globálna práčovňa: Ako z nás robia hlupákov</h3>
+                        <p>A teraz prichádza tá najväčšia absurdita. Myslíte si, že sme ruskú ropu z Európy skutočne vymazali? Ani náhodou.</p>
+                        <p>Krajiny ako India alebo Čína dnes nakupujú ruskú ropu v rekordných objemoch. Indické rafinérie túto ropu spracujú, dajú na ňu svoju pečiatku, a následne ju s obrovskou prirážkou predajú späť do Európskej únie.</p>
+                        <p>Výsledok? Ruská ropa k nám tečie aj tak. Ale my platíme indickým priekupníkom obrovské marže len preto, aby si politici v Bruseli mohli pred kamerami umyť ruky a povedať, že sme „morálne čistí“. My z našich daní financujeme toto globálne divadelné predstavenie, zatiaľ čo iné ekonomiky na našej hlúposti astronomicky bohatnú.</p>
+
+                        <h3>Zahraničná politika sa musí robiť pre našu peňaženku</h3>
+                        <p>Ako mladý človek, ktorý chcel kedysi úprimne veriť liberálnym frázam, dnes vidím len zničenú budúcnosť. Keď stúpne cena ropy a energií, nestúpne len cena na benzínke. Predražuje sa všetko – od potravín až po stavebné materiály. Podrezávame si vlastnú ekonomickú vetvu len preto, aby sme poslušne slúžili zahraničnej politike, ktorá absolútne nerešpektuje naše existenčné záujmy.</p>
+                        <p>Je čas odhodiť naivitu. Štáty nemajú priateľov, štáty majú len svoje záujmy. Náš záujem je jasný: <strong>silná ekonomika, dostupné energie a fungujúca Družba</strong>. Pragmatická obchodná spolupráca nesmie byť tabu.</p>
+                        <p>Kriku o morálke z liberálnej bubliny už bolo dosť. Je načase vrátiť sa k tvrdému pragmatizmu a zdravému rozumu. Presne z tohto dôvodu otvorene podporujem politiku hnutia Republika. Sú jedinou relevantnou silou, ktorá sa nebojí povedať nahlas pravdu: sme bábkami v cudzej hre a je nutné sa z nej okamžite vymaniť.</p>
+                        <p>Slovensko na prvom mieste. Bez cenzúry.</p>
+                    </div>
+
+                    <a href="index.html" class="btn-back">&#10094; Späť na všetky články</a>
+                </div>
+            </article>
+
+        </main>
+
+        <aside class="sidebar" id="kto-som">
+            
+            <div class="widget about-widget">
+                <h3 class="widget-title">O autorovi</h3>
+                <img src="https://via.placeholder.com/300x300/e1e8f0/333333?text=Fotka+Jakuba" alt="Jakub Naod">
+                <p><strong>Volám sa Jakub Naod.</strong> Som z Prievidze a rozhodol som sa vstúpiť do verejného priestoru, pretože sa už nedokážem ticho prizerať, kam naša spoločnosť smeruje.</p>
+                <p>Môj príbeh je príbehom radikálneho precitnutia. Ešte donedávna som bol presvedčený liberál. Veril som mainstreamu, podporoval progresívne myšlienky aj Ukrajinu.</p>
+                <p>V roku <strong>2024</strong> som vycestoval do Európskeho parlamentu v Štrasburgu. Očakával som riešenia, no pri diskusiách s političkami prišiel prvý šok. Naše ekonomické záujmy tam nikoho nezaujímajú, rieši sa len ideológia. Trvalo mi viac ako rok, kým som si to všetko v hlave upratal. <strong>Definitívny zlom k mojim súčasným pravicovým názorom prišiel nedávno, v januári 2026.</strong></p>
+                <p>Odmietam nezmyselný Green Deal, ideologickú propagandu v školách, diktát Bruselu aj cudzie vojny. Bojujem za suverenitu, tradičné hodnoty a silnú ekonomiku pre domácich. <strong>Som hrdým podporovateľom hnutia Republika.</strong></p>
+            </div>
+
+            <div class="widget newsletter-widget" id="kontakt">
+                <h3 class="widget-title">Sledujte môj blog</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--text-muted);">Napíšte mi svoj e-mail a budem vás informovať, keď vydám nový text. Žiadny spam.</p>
+                
+                <form action="#">
+                    <input type="email" placeholder="Váš e-mail" required>
+                    <button type="submit">Odoberať články</button>
+                </form>
+                </div>
+
+        </aside>
+
+    </div>
+
+    <footer>
+        <p><strong>Jakub Naod</strong> &copy; 2026. Bez cenzúry. Vstup do verejného priestoru.</p>
+    </footer>
+
+</body>
+</html>
