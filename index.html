@@ -47,22 +47,20 @@
         .main-content { flex: 1; min-width: 60%; }
         .sidebar { width: 340px; flex-shrink: 0; }
 
-        .post-card { background: var(--bg-white); border: 1px solid var(--border-color); border-top: 4px solid var(--brand-red); margin-bottom: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); transition: transform 0.2s, box-shadow 0.2s; }
+        .post-card { background: var(--bg-white); border: 1px solid var(--border-color); border-top: 4px solid var(--brand-red); margin-bottom: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); transition: transform 0.2s, box-shadow 0.2s; overflow: hidden; }
         .post-card:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
         
-        .post-image-container { position: relative; width: 100%; text-align: center; background: #f9fbfd; border-bottom: 1px solid var(--border-color); }
-        .post-image { width: 100%; height: 350px; object-fit: cover; display: block; }
-        
-        /* Špeciálna trieda, aby sa portrét Púchovského nedeformoval */
-        .post-image-portrait { max-width: 100%; height: 350px; object-fit: contain; margin: 0 auto; display: block; padding: 10px; }
+        .post-image-container { position: relative; width: 100%; height: 250px; background: #f9fbfd; border-bottom: 1px solid var(--border-color); overflow: hidden; }
+        .post-image { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .post-image-portrait { width: 100%; height: 100%; object-fit: contain; padding: 10px; display: block; }
 
-        .post-body { padding: 35px; }
-        .post-meta { display: flex; gap: 15px; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px; font-weight: 600; text-transform: uppercase; }
+        .post-body { padding: 30px; }
+        .post-meta { display: flex; gap: 15px; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 10px; font-weight: 600; text-transform: uppercase; }
         .post-category { color: var(--brand-light-blue); }
-        .post-title { font-size: 1.8rem; color: var(--brand-dark-blue); margin-bottom: 15px; line-height: 1.3; }
-        .post-excerpt { font-size: 1.05rem; margin-bottom: 25px; color: var(--text-muted); line-height: 1.6; }
+        .post-title { font-size: 1.6rem; color: var(--brand-dark-blue); margin-bottom: 10px; line-height: 1.3; }
+        .post-excerpt { font-size: 1rem; margin-bottom: 20px; color: var(--text-muted); line-height: 1.5; }
         
-        .btn-read { display: inline-flex; align-items: center; gap: 8px; background: var(--brand-dark-blue); color: var(--bg-white); padding: 12px 25px; font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; text-transform: uppercase; border-radius: 2px; }
+        .btn-read { display: inline-flex; align-items: center; gap: 8px; background: var(--brand-dark-blue); color: var(--bg-white); padding: 10px 20px; font-family: var(--font-heading); font-size: 0.9rem; font-weight: 700; text-transform: uppercase; border-radius: 2px; }
         .btn-read:hover { background: var(--brand-light-blue); }
 
         .widget { background: var(--bg-white); border: 1px solid var(--border-color); padding: 30px; margin-bottom: 30px; border-top: 4px solid var(--brand-dark-blue); }
@@ -81,7 +79,6 @@
             <ul>
                 <li><a href="index.html">Najnovšie texty</a></li>
                 <li><a href="#kto-som">O autorovi</a></li>
-                <li><a href="#kontakt">Kontakt</a></li>
             </ul>
         </nav>
     </header>
@@ -101,11 +98,11 @@
                 </div>
                 <div class="post-body">
                     <div class="post-meta">
-                        <span class="post-category">Školstvo / Spoločnosť</span>
+                        <span class="post-category">Školstvo</span>
                         <span>24. Marec 2026</span>
                     </div>
                     <h2 class="post-title">Ruky preč od našich detí!</h2>
-                    <p class="post-excerpt">Ako si Progresívne Slovensko robí zo škôl politické mítingy. Zastavme politickú indoktrináciu našich detí pod rúškom boja proti hoaxom...</p>
+                    <p class="post-excerpt">Ako si Progresívne Slovensko robí zo škôl politické mítingy a indoktrinuje mládež. Tento dvojaký meter musí skončiť.</p>
                     <a href="ruky-prec-od-deti.html" class="btn-read">Čítať celý článok ➔</a>
                 </div>
             </article>
@@ -120,7 +117,7 @@
                         <span>24. Marec 2026</span>
                     </div>
                     <h2 class="post-title">Zelená utópia nás vyjde draho</h2>
-                    <p class="post-excerpt">Green Deal nie je o záchrane planéty, ale o likvidácii priemyslu. Prečo budeme platiť čoraz drahšie energie a ako nám chcú zobrať naše majetky?</p>
+                    <p class="post-excerpt">Green Deal zlikviduje náš majetok. Brusel nám ide siahnuť na autá a znehodnotiť naše byty cez povinné zatepľovanie.</p>
                     <a href="zelena-utopia.html" class="btn-read">Čítať celý článok ➔</a>
                 </div>
             </article>
@@ -131,11 +128,11 @@
                 </div>
                 <div class="post-body">
                     <div class="post-meta">
-                        <span class="post-category">Suverenita</span>
+                        <span class="post-category">Bezpečnosť</span>
                         <span>22. Marec 2026</span>
                     </div>
-                    <h2 class="post-title">Migrácia a ohrozenie našej bezpečnosti</h2>
-                    <p class="post-excerpt">Toto nie je o peniazoch. Brusel nám cez Migračný pakt berie to najcennejšie – našu bezpečnosť na vlastných uliciach...</p>
+                    <h2 class="post-title">Migrácia a ohrozenie bezpečnosti</h2>
+                    <p class="post-excerpt">Brusel nám cez Migračný pakt berie to najcennejšie – našu bezpečnosť na vlastných uliciach. Pozrite sa na Nemecko.</p>
                     <a href="migracia.html" class="btn-read">Čítať celý článok ➔</a>
                 </div>
             </article>
@@ -150,23 +147,8 @@
                         <span>20. Marec 2026</span>
                     </div>
                     <h2 class="post-title">Koniec ilúzií: Ako som precitol</h2>
-                    <p class="post-excerpt">Dlhé roky som žil v liberálnej bubline. Veril som mainstreamu, až kým realita neprestala sedieť s ich príbehom a neobjavil som ich pokrytectvo...</p>
+                    <p class="post-excerpt">Dlhé roky som žil v liberálnej bubline. Realita ma však prinútila zložiť ružové okuliare a hľadať pragmatické riešenia.</p>
                     <a href="koniec-iluzii.html" class="btn-read">Čítať celý článok ➔</a>
-                </div>
-            </article>
-
-            <article class="post-card">
-                <div class="post-image-container">
-                    <img src="https://cdn.sita.sk/sites/32/2022/03/gettyimages-1188513647-768x512.jpg" alt="Ropa" class="post-image">
-                </div>
-                <div class="post-body">
-                    <div class="post-meta">
-                        <span class="post-category">Geopolitika</span>
-                        <span>17. Marec 2026</span>
-                    </div>
-                    <h2 class="post-title">Prečo platíme za ropu šialené ceny?</h2>
-                    <p class="post-excerpt">Účet za americkú vojnu, odpojenú Družbu a progresívnu naivitu. Poďme sa pozrieť na fakty bez cenzúry...</p>
-                    <a href="clanok-ropa.html" class="btn-read">Čítať celý článok ➔</a>
                 </div>
             </article>
 
@@ -175,11 +157,7 @@
         <aside class="sidebar" id="kto-som">
             <div class="widget">
                 <h3 class="widget-title">O autorovi</h3>
-                <p>Volám sa <strong>Jakub Naod</strong>. Odmietam ideologickú manipuláciu a verím v silné, suverénne Slovensko. Som hrdým podporovateľom hnutia Republika a zameriavam sa na ochranu majetku, suverenity a zdravého rozumu.</p>
-            </div>
-            <div class="widget" id="kontakt">
-                <h3 class="widget-title">Sledujte ma</h3>
-                <p>Nájdete ma na sociálnych sieťach, kde pravidelne vyvraciam progresívne klamstvá a prinášam tvrdé fakty.</p>
+                <p>Volám sa <strong>Jakub Naod</strong>. Odmietam ideologickú manipuláciu a verím v racionálne, suverénne Slovensko. Zameriavam sa na tvrdé fakty, ochranu ekonomiky a zdravý rozum.</p>
             </div>
         </aside>
 
