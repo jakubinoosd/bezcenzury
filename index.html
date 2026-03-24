@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Jakub Naod | Bez cenzúry</title>
-    <meta name="description" content="Zápisky človeka, ktorý vystúpil z liberálnej bubliny. Názory na spoločnosť, byrokraciu a suverenitu Slovenska.">
+    <title>Ruky preč od našich detí! | Jakub Naod</title>
+    <meta name="description" content="Ako si Progresívne Slovensko robí zo škôl politické mítingy. Zastavme politickú indoktrináciu našich detí pod rúškom boja proti hoaxom.">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,7 +32,6 @@
         a { text-decoration: none; color: inherit; transition: all 0.2s ease; }
         h1, h2, h3, h4 { font-family: var(--font-heading); text-transform: uppercase; }
         
-        /* HLAVIČKA */
         header { position: fixed; top: 0; width: 100%; background: var(--bg-white); box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; padding: 0 5%; display: flex; justify-content: space-between; align-items: center; height: 70px; border-top: 4px solid var(--brand-dark-blue); }
         .logo { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 900; color: var(--brand-dark-blue); }
         .logo span { color: var(--brand-red); }
@@ -40,68 +39,32 @@
         nav a { font-weight: 600; font-size: 0.9rem; color: var(--brand-dark-blue); text-transform: uppercase; display: flex; align-items: center; height: 70px; border-bottom: 3px solid transparent; }
         nav a:hover { border-bottom-color: var(--brand-light-blue); color: var(--brand-light-blue); }
 
-        /* ZÁHLAVIE BLOGU */
-        .blog-header { margin-top: 70px; background: var(--brand-dark-blue); padding: 60px 5%; text-align: center; color: var(--bg-white); border-bottom: 5px solid var(--brand-red); }
-        .blog-header h1 { font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 900; margin-bottom: 15px; letter-spacing: -1px; }
-        .blog-header p { font-size: 1.2rem; color: #e1e8f0; max-width: 700px; margin: 0 auto; font-weight: 400; line-height: 1.6; }
+        .blog-header { margin-top: 70px; background: var(--brand-dark-blue); padding: 40px 5%; text-align: center; color: var(--bg-white); border-bottom: 5px solid var(--brand-red); }
+        .blog-header h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; margin-bottom: 10px; letter-spacing: -1px; }
 
-        /* ROZLOŽENIE */
-        .container { max-width: 1200px; margin: 50px auto; padding: 0 5%; display: flex; flex-wrap: wrap; gap: 40px; align-items: flex-start; }
+        .container { max-width: 1000px; margin: 50px auto; padding: 0 5%; display: flex; flex-direction: column; gap: 40px; }
         
-        .main-content { flex: 1; min-width: 60%; }
-        .sidebar { width: 340px; flex-shrink: 0; }
-
-        /* KARTA ČLÁNKU */
-        .post-card { background: var(--bg-white); border: 1px solid var(--border-color); border-top: 4px solid var(--brand-red); margin-bottom: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); transition: transform 0.2s, box-shadow 0.2s; }
-        .post-card:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+        .article-content { background: var(--bg-white); border: 1px solid var(--border-color); border-top: 4px solid var(--brand-red); padding: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
         
-        .post-image-container { position: relative; width: 100%; }
-        .post-image { width: 100%; height: 350px; object-fit: cover; display: block; }
-        .image-caption { display: block; font-size: 0.75rem; color: var(--text-muted); text-align: right; padding: 6px 15px; background: #f9fbfd; border-bottom: 1px solid var(--border-color); font-style: italic; }
-        
-        .post-body { padding: 35px; }
-        .post-meta { display: flex; gap: 15px; font-size: 0.85rem; color: var(--text-muted); margin-bottom: 15px; font-weight: 600; text-transform: uppercase; }
+        .post-meta { display: flex; gap: 15px; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 25px; font-weight: 600; text-transform: uppercase; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;}
         .post-category { color: var(--brand-light-blue); }
-        .post-title { font-size: 1.8rem; color: var(--brand-dark-blue); margin-bottom: 15px; line-height: 1.3; }
-        .post-excerpt { font-size: 1.05rem; margin-bottom: 25px; color: var(--text-muted); line-height: 1.6; }
         
-        .btn-read { display: inline-flex; align-items: center; gap: 8px; background: var(--brand-dark-blue); color: var(--bg-white); padding: 12px 25px; font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; text-transform: uppercase; border-radius: 2px; }
-        .btn-read:hover { background: var(--brand-light-blue); color: #fff; }
+        /* Nový štýl pre hlavnú fotku v článku */
+        .article-main-image-container { width: 100%; margin-bottom: 30px; text-align: center; }
+        .article-main-image { max-width: 100%; height: auto; border: 2px solid var(--border-color); padding: 5px; background: var(--bg-white); }
 
-        /* WIDGETY / BOČNÝ PANEL */
-        .widget { background: var(--bg-white); border: 1px solid var(--border-color); padding: 30px; margin-bottom: 30px; border-top: 4px solid var(--brand-dark-blue); }
-        .widget-title { font-size: 1.2rem; color: var(--brand-dark-blue); margin-bottom: 20px; border-bottom: 2px solid var(--border-color); padding-bottom: 10px; }
-        
-        .about-widget p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 15px; line-height: 1.6; }
-        .about-widget strong { color: var(--text-main); }
-        
-        .newsletter-widget input { width: 100%; padding: 12px; margin-bottom: 10px; border: 1px solid var(--border-color); font-family: var(--font-body); }
-        .newsletter-widget button { width: 100%; padding: 12px; background: var(--brand-red); color: white; border: none; font-family: var(--font-heading); font-weight: 700; text-transform: uppercase; cursor: pointer; transition: background 0.3s; }
-        .newsletter-widget button:hover { background: #b51f15; }
-        .newsletter-widget button:disabled { background: #94a3b8; cursor: not-allowed; }
+        .article-content p { font-size: 1.1rem; margin-bottom: 20px; line-height: 1.8; color: var(--text-main); }
+        .article-content h3 { font-size: 1.5rem; color: var(--brand-dark-blue); margin-top: 40px; margin-bottom: 20px; }
+        .article-content ul { margin-left: 20px; margin-bottom: 25px; }
+        .article-content li { font-size: 1.1rem; margin-bottom: 10px; line-height: 1.6; }
+        .article-content strong { color: var(--brand-dark-blue); }
 
-        /* ANIMÁCIE PRE ODESIELANIE */
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
-        @keyframes spin { 100% { transform: rotate(360deg); } }
-        .spin-icon { display: inline-block; animation: spin 1s linear infinite; margin-left: 8px; }
+        .btn-back { display: inline-flex; align-items: center; gap: 8px; background: #e1e8f0; color: var(--brand-dark-blue); padding: 12px 25px; font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; text-transform: uppercase; border-radius: 2px; margin-bottom: 20px; transition: background 0.2s; }
+        .btn-back:hover { background: #cbd5e1; }
 
-        /* PÄTIČKA */
         footer { background: #003366; color: #a0aec0; text-align: center; padding: 30px 5%; font-size: 0.9rem; border-top: 4px solid var(--brand-light-blue); margin-top: 50px; }
-        footer strong { color: var(--bg-white); }
 
-        @media (max-width: 900px) {
-            .container { flex-direction: column; }
-            .sidebar { width: 100%; }
-        }
-        @media (max-width: 768px) {
-            header { height: auto; flex-direction: column; padding: 15px; gap: 10px; }
-            nav ul { flex-wrap: wrap; justify-content: center; gap: 15px; height: auto; }
-            nav a { height: auto; padding: 5px 0; border: none; }
-            .blog-header { margin-top: 100px; }
-            .post-body { padding: 25px; }
-            .post-title { font-size: 1.5rem; }
-            .post-image { height: 200px; }
-        }
+        @media (max-width: 768px) { .article-content { padding: 25px; } }
     </style>
 </head>
 <body>
@@ -111,120 +74,58 @@
         <nav>
             <ul>
                 <li><a href="index.html">Najnovšie texty</a></li>
-                <li><a href="#kto-som">O autorovi</a></li>
-                <li><a href="#kontakt">Kontakt</a></li>
             </ul>
         </nav>
     </header>
 
     <section class="blog-header">
-        <h1>Bez cenzúry</h1>
-        <p>Ukradli nám budúcnosť a nahradili ju ideológiou. Zápisky človeka, ktorý vystúpil z liberálnej bubliny a začal hľadať skutočnú pravdu.</p>
+        <h1>Ruky preč od našich detí! Ako si Progresívne Slovensko robí zo škôl politické mítingy</h1>
     </section>
 
     <div class="container">
         
-        <main class="main-content">
-            
-            <article class="post-card">
-                <div class="post-image-container">
-                    <img src="https://cdn.sita.sk/sites/32/2022/03/gettyimages-1188513647-768x512.jpg" alt="Ilustračné foto - ropa" class="post-image">
-                    <span class="image-caption">Foto: ilustračné, www.gettyimages.com.</span>
-                </div>
-                
-                <div class="post-body">
-                    <div class="post-meta">
-                        <span class="post-category">Geopolitika a Ekonomika</span>
-                        <span>17. Marec 2026</span>
-                    </div>
-                    
-                    <h2 class="post-title">Prečo platíme za ropu šialené ceny? Účet za americkú vojnu, odpojenú Družbu a progresívnu naivitu.</h2>
-                    
-                    <p class="post-excerpt">Politici a médiá nám neustále opakujú, že sa musíme uskromniť. Že drahší benzín, likvidačné ceny energií a astronomická inflácia sú „daňou za solidaritu a našu bezpečnosť“. Poďme sa však na túto ich solidaritu pozrieť bez ružových okuliarov a cenzúry...</p>
-                    
-                    <a href="clanok-ropa.html" class="btn-read">Čítať celý článok <span>&#10140;</span></a>
-                </div>
-            </article>
+        <a href="index.html" class="btn-back">⬅ Späť na hlavnú stránku</a>
 
+        <main class="article-content">
+            <div class="post-meta">
+                <span class="post-category">Školstvo / Spoločnosť</span>
+                <span>24. Marec 2026</span>
+                <span>Autor: Jakub Naod</span>
+            </div>
+
+            <div class="article-main-image-container">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQByJ8hnio-lBq2gTL3aiVKAEBSewk7bEn7sw&s" alt="Dávid Púchovský z PS" class="article-main-image">
+            </div>
+
+            <p>Priatelia, poďme si povedať jednu absolútne základnú vec, na ktorej stála naša spoločnosť celé desaťročia: škola má byť apolitická inštitúcia. Je to miesto, kam my, rodičia a občania, posielame naše deti, aby sa učili matematiku, jazyky, dejepis a aby rozvíjali svoje kritické myslenie. Škola nesmie byť inkubátorom na vymývanie mozgov a nesmie slúžiť ako náborové stredisko pre žiadnu politickú stranu.</p>
+
+            <p>To, čoho sme však dnes svedkami zo strany takzvaných "slušných" liberálov, je priamy útok na túto zásadu. Pozrime sa na konkrétny prípad, ktorý dokonale odhaľuje ich obrovské pokrytectvo – kauza Dávid Púchovský. Kto to vlastne je? Je to oficiálny, platený asistent poslanca Národnej rady za Progresívne Slovensko. Človek, ktorý je priamo napojený na centrálu najsilnejšej liberálnej strany v krajine.</p>
+
+            <p>A tento človek si len tak nakráča na strednú školu, aby tam študentom robil prednášky. Ako inak, všetko je to šikovne zabalené do pekných fráz o "mediálnej gramotnosti" a "boji proti hoaxom". Ale povedzme si to na rovinu – aká je to mediálna gramotnosť, keď vám ju ide prednášať človek s jasným politickým tričkom? Je to čistá, neskrývaná politická indoktrinácia našej mládeže! Progresívci vedia, že vo voľbách nedokážu presvedčiť racionálne uvažujúceho, pracujúceho človeka, tak sa rozhodli zamerať na tých najzraniteľnejších – na stredoškolákov.</p>
+
+            <p>A teraz si na sekundu predstavte ten najkrajší príklad ich dvojakého metra. Predstavte si, že by na akúkoľvek strednú školu na Slovensku prišiel robiť prednášku o "vlastenectve a národných hodnotách" oficiálny asistent poslanca za hnutie Republika. Viete, čo by sa v tej sekunde dialo?!</p>
+
+            <p>Liberálne médiá, Denník N a Markíza by okamžite prerušili vysielanie. Od rána do večera by vrieskali o extrémizme a neprípustnom zasahovaní do vzdelávania. Aktivisti zo Zastavme korupciu a rôzne mimovládky by sa na mieste priväzovali reťazami o brány školy, riaditeľa by mediálne zlynčovali a ministerstvo by tam okamžite posielalo inšpekciu.</p>
+
+            <p><strong>Ale keď si z triedy urobí politický míting asistent z PS-ka? Zrazu je ticho. Skutok sa nestal.</strong> Zrazu je to len "neškodná beseda". Tento dvojaký meter je priam až fyzicky odporný.</p>
+
+            <p>Rodičia majú výhradné právo vedieť, kto a s akým úmyslom prichádza do kontaktu s ich deťmi. Nikto nemá právo vtláčať deťom do hláv jednostrannú politickú propagandu. Dezinformácie sa neporazia tým, že do škôl pošleme politických asistentov, aby žiakom diktovali, koho majú voliť.</p>
+
+            <h3>Riešenie, ktoré ponúka zdravý rozum, je jasné:</h3>
+            <ul>
+                <li><strong>Absolútny zákaz pre politikov v školách:</strong> Aktívni politici, ich asistenti a ľudia platení politickými stranami nemajú počas vyučovania na školách čo robiť. Bez výnimky.</li>
+                <li><strong>Informovaný súhlas rodiča:</strong> Akákoľvek prednáška od externej mimovládky alebo organizácie musí byť vopred schválená nielen riaditeľom, ale rodičia musia dostať presnú osnovu toho, čo sa bude deťom tlačiť do hláv.</li>
+                <li><strong>Návrat k faktom:</strong> Škola má učiť žiakov, AKO majú myslieť, nie ČO si majú myslieť.</li>
+            </ul>
+
+            <p><strong>Naše deti patria nám, rodičom, nie Progresívnemu Slovensku a nie politickým mimovládkam. Je najvyšší čas vyhnať politiku z tried!</strong></p>
         </main>
-
-        <aside class="sidebar" id="kto-som">
-            
-            <div class="widget about-widget">
-                <h3 class="widget-title">O autorovi</h3>
-                <p>Volám sa <strong>Jakub Naod</strong> a rozhodol som sa vstúpiť do verejného priestoru, pretože už nedokážem ticho sledovať, kam sa naša spoločnosť posúva.</p>
-                <p>Môj príbeh je príbehom precitnutia. Ešte donedávna som veril tomu, čo som počul okolo seba – veril som mainstreamu, stál som na strane progresívnych myšlienok a vnímal svet cez optiku, ktorú mi ponúkali médiá a okolie.</p>
-                <p>Postupne som si však začal všímať, že realita je iná. Že sa čoraz viac rieši ideológia namiesto skutočných problémov ľudí. Že sa potláča diskusia, spochybňuje zdravý rozum a ignorujú sa ekonomické a sociálne dopady rozhodnutí, ktoré prichádzajú zhora.</p>
-                <p>Trvalo mi určitý čas, kým som si veci v hlave usporiadal. Nebol to rýchly ani jednoduchý proces. No dnes mám jasno.</p>
-                <p>Odmietam nezmyselné experimenty na spoločnosti, ktoré ohrozujú našu ekonomiku aj budúcnosť mladých. Odmietam ideologickú manipuláciu v školách, tlak zvonku na naše rozhodovanie aj zasahovanie do našej suverenity.</p>
-                <p>Verím v silný štát, ktorý stojí na vlastných nohách. V tradičné hodnoty, ktoré držia spoločnosť pokope. A v ekonomiku, ktorá slúži ľuďom doma, nie cudzím záujmom.</p>
-                <p>Som hrdým podporovateľom hnutia Republika a chcem byť hlasom tých, ktorí majú pocit, že ich dnes nikto nepočúva.</p>
-            </div>
-
-            <div class="widget newsletter-widget" id="kontakt">
-                <h3 class="widget-title">Sledujte môj blog</h3>
-                <p style="font-size: 0.9rem; margin-bottom: 15px; color: var(--text-muted);">Napíšte mi svoj e-mail a budem vás informovať, keď vydám nový text. Žiadny spam.</p>
-                
-                <form id="subscribeForm">
-                    <input type="email" id="emailInput" placeholder="Váš e-mail" required>
-                    <button type="submit" id="submitBtn">Odoberať články</button>
-                    
-                    <div id="successMessage" style="display: none; color: #15803d; font-weight: bold; margin-top: 15px; text-align: center; animation: fadeIn 0.5s; background: #dcfce7; padding: 10px; border-left: 4px solid #16a34a;">
-                        ✅ Úspešne prihlásené k odberu!
-                    </div>
-                </form>
-
-            </div>
-
-        </aside>
 
     </div>
 
     <footer>
-        <p><strong>Jakub Naod</strong> &copy; 2026. Bez cenzúry. Vstup do verejného priestoru.</p>
+        <p><strong>Jakub Naod</strong> &copy; 2026. Bez cenzúry.</p>
     </footer>
-
-    <script>
-        const form = document.getElementById('subscribeForm');
-        const btn = document.getElementById('submitBtn');
-        const msg = document.getElementById('successMessage');
-        const emailInput = document.getElementById('emailInput');
-
-        // TVOJ DISCORD WEBHOOK LINK
-        const discordWebhookUrl = 'https://discord.com/api/webhooks/1483544449140265171/Qd_O2FTIoXDv31Kcj3bOs74XUFFXViQnCq4DZ4YJ1uDVP9N-hgIrB5oRHlBwRbD5IwyS';
-
-        form.addEventListener('submit', function(e) {
-            e.preventDefault(); 
-
-            const emailValue = emailInput.value;
-            btn.innerHTML = 'Odosielam... <span class="spin-icon">⏳</span>';
-            btn.disabled = true;
-
-            const payload = {
-                content: `🚨 **Nový odberateľ na webe (Z hlavnej stránky)!**\nE-mail: \`${emailValue}\``
-            };
-
-            fetch(discordWebhookUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(payload)
-            }).then(response => {
-                if (response.ok) {
-                    btn.style.display = 'none';
-                    emailInput.style.display = 'none';
-                    msg.style.display = 'block';
-                } else {
-                    btn.innerHTML = 'Chyba. Skúste znova.';
-                    btn.disabled = false;
-                }
-            }).catch(error => {
-                btn.innerHTML = 'Chyba spojenia.';
-                btn.disabled = false;
-            });
-        });
-    </script>
 
 </body>
 </html>
