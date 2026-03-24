@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Migrácia a naša bezpečnosť | Jakub Naod</title>
+    <meta name="description" content="Toto nie je o peniazoch. Brusel nám cez Migračný pakt berie to najcennejšie – našu bezpečnosť! Čítajte celú pravdu.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Roboto:wght@500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --brand-dark-blue: #004e96; 
+            --brand-light-blue: #009ee3; 
+            --brand-red: #da291c; 
+            
+            --bg-page: #f5f8fa; 
+            --bg-white: #ffffff;
+            --text-main: #333333;
+            --text-muted: #475569;
+            --border-color: #e1e8f0;
+            
+            --font-heading: 'Roboto', sans-serif;
+            --font-body: 'Open Sans', sans-serif;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+        body { font-family: var(--font-body); background-color: var(--bg-page); color: var(--text-main); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; transition: all 0.2s ease; }
+        h1, h2, h3, h4 { font-family: var(--font-heading); text-transform: uppercase; }
+        
+        header { position: fixed; top: 0; width: 100%; background: var(--bg-white); box-shadow: 0 2px 10px rgba(0,0,0,0.1); z-index: 1000; padding: 0 5%; display: flex; justify-content: space-between; align-items: center; height: 70px; border-top: 4px solid var(--brand-dark-blue); }
+        .logo { font-family: var(--font-heading); font-size: 1.5rem; font-weight: 900; color: var(--brand-dark-blue); }
+        .logo span { color: var(--brand-red); }
+        nav ul { display: flex; gap: 20px; list-style: none; height: 100%; }
+        nav a { font-weight: 600; font-size: 0.9rem; color: var(--brand-dark-blue); text-transform: uppercase; display: flex; align-items: center; height: 70px; border-bottom: 3px solid transparent; }
+        nav a:hover { border-bottom-color: var(--brand-light-blue); color: var(--brand-light-blue); }
+
+        .blog-header { margin-top: 70px; background: var(--brand-dark-blue); padding: 40px 5%; text-align: center; color: var(--bg-white); border-bottom: 5px solid var(--brand-red); }
+        .blog-header h1 { font-size: clamp(2rem, 4vw, 3rem); font-weight: 900; margin-bottom: 10px; letter-spacing: -1px; }
+
+        .container { max-width: 1000px; margin: 50px auto; padding: 0 5%; display: flex; flex-direction: column; gap: 40px; }
+        
+        .article-content { background: var(--bg-white); border: 1px solid var(--border-color); border-top: 4px solid var(--brand-red); padding: 40px; box-shadow: 0 5px 15px rgba(0,0,0,0.03); }
+        
+        .post-meta { display: flex; gap: 15px; font-size: 0.9rem; color: var(--text-muted); margin-bottom: 25px; font-weight: 600; text-transform: uppercase; border-bottom: 1px solid var(--border-color); padding-bottom: 15px;}
+        .post-category { color: var(--brand-light-blue); }
+        
+        .article-content p { font-size: 1.1rem; margin-bottom: 20px; line-height: 1.8; color: var(--text-main); }
+        .article-content h3 { font-size: 1.5rem; color: var(--brand-dark-blue); margin-top: 40px; margin-bottom: 20px; }
+        .article-content ul { margin-left: 20px; margin-bottom: 25px; }
+        .article-content li { font-size: 1.1rem; margin-bottom: 10px; line-height: 1.6; }
+        .article-content strong { color: var(--brand-dark-blue); }
+
+        .btn-back { display: inline-flex; align-items: center; gap: 8px; background: #e1e8f0; color: var(--brand-dark-blue); padding: 12px 25px; font-family: var(--font-heading); font-size: 0.95rem; font-weight: 700; text-transform: uppercase; border-radius: 2px; margin-bottom: 20px; transition: background 0.2s; }
+        .btn-back:hover { background: #cbd5e1; }
+
+        footer { background: #003366; color: #a0aec0; text-align: center; padding: 30px 5%; font-size: 0.9rem; border-top: 4px solid var(--brand-light-blue); margin-top: 50px; }
+
+        @media (max-width: 768px) { .article-content { padding: 25px; } }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo"><a href="index.html">Jakub <span>Naod</span></a></div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Najnovšie texty</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="blog-header">
+        <h1>Toto nie je o peniazoch. Brusel nám cez Migračný pakt berie našu bezpečnosť!</h1>
+    </section>
+
+    <div class="container">
+        
+        <a href="index.html" class="btn-back">⬅ Späť na hlavnú stránku</a>
+
+        <main class="article-content">
+            <div class="post-meta">
+                <span class="post-category">Suverenita</span>
+                <span>22. Marec 2026</span>
+                <span>Autor: Jakub Naod</span>
+            </div>
+
+            <p>Priatelia, poďme sa baviť úplne na rovinu. Keď liberáli a politici z Progresívneho Slovenska hovoria o novom Migračnom pakte z Bruselu, hrajú sa so slovíčkami ako „európska solidarita“. Ale nenechajme sa oklamať. Toto vôbec nie je o peniazoch! Peniaze sa dajú zarobiť. Tu ide o niečo oveľa dôležitejšie. Ide o naše holé životy a o bezpečnosť našich žien a detí na našich vlastných uliciach!</p>
+
+            <p>My tu na Slovensku tvrdo makáme. Chceme si budovať normálny život, kúpiť si byt, založiť rodinu a žiť v pokoji. A ten pokoj zatiaľ máme. Môžete pustiť dieťa večer von, môžete sa bez strachu prejsť po meste. Toto je dnes vo svete obrovský luxus. A o tento luxus nás chcú progresívci a byrokrati v Bruseli pripraviť.</p>
+
+            <p>Slniečkari nám tvrdia, že nelegálna migrácia je obohatením. Aké obohatenie?! Otvorte si oči a pozrite sa, čo sa deje kúsok za našimi hranicami! Pozrite sa na Nemecko. Ešte pred pár rokmi nám ich dávali za vzor, ako to všetko „zvládnu“. Dnes? Nemecká polícia je zúfalá. Útoky nožom na vlakových staniciach a na uliciach sú tam na dennom poriadku. Do centier miest musia posielať po zuby ozbrojených ťažkoodencov.</p>
+
+            <p>A čo slávne Švédsko? Krajina, ktorá bola kedysi najbezpečnejšia na svete, dnes pripomína vojnovú zónu. Migrantské gangy si tam vybavujú účty bombovými útokmi a streľbou na uliciach. Do takzvaných „no-go zón“, kam sa boja vstúpiť aj záchranári, už musí švédska vláda posielať armádu! Toto je tá ich slávna integrácia a tolerancia v praxi. Importovali si tam kriminálne gangy a teraz sa čudujú.</p>
+
+            <p>A viete, čo robí Brusel teraz? Keď vidia, že im ten ich šialený multikulti experiment doma horí, chcú to hodiť na nás! Chcú nám rozkázať, aby sme týchto ľudí povinne brali k nám na Slovensko. A ak povieme NIE, naparia nám likvidačné pokuty.</p>
+
+            <p>Kedysi som aj ja žil v tej liberálnej bubline. Počúval som ich reči o tolerancii. Ale keď vidím túto krvavú realitu a keď si predstavím, že by sa toto malo diať v mojom meste, povedal som si: <strong>A dosť! Zložil som si ružové okuliare.</strong> Moja rodina a naša bezpečnosť je pre mňa miliónkrát dôležitejšia ako to, či ma bude potľapkávať po pleci nejaký úradník v Bruseli alebo kaviareň v Bratislave.</p>
+
+            <p>Preto dnes jasne hovorím: Nepotrebujeme politikov, ktorí sa v Bruseli hrbia. Potrebujeme tvrdo brániť naše hranice a naše zákony. Ak tento nekompromisný postoj dnes najviac presadzuje Republika, tak stojím za tým, lebo chcem žiť v bezpečnom štáte!</p>
+
+            <h3>Riešenie je pritom úplne jednoduché a zdravý rozum hovorí jasne:</h3>
+            <ul>
+                <li><strong>Tvrdá ochrana hraníc:</strong> Každý čln s nelegálnymi migrantmi musí byť okamžite otočený späť. Žiadna cesta do Európy.</li>
+                <li><strong>Azyl len mimo Európy:</strong> Žiadosti nech si riešia vo svojich krajinách. Kto prekročí hranicu nelegálne, stráca akýkoľvek nárok tu ostať.</li>
+                <li><strong>Porušíš zákon? Letíš:</strong> Kto k nám príde, dostane šancu a spácha tu trestný čin, musí byť okamžite, bez milosti vyhostený späť.</li>
+            </ul>
+
+            <p><strong>Slovensko je náš domov. A o tom, kto bude do nášho domova chodiť a kto tu bude žiť, si budeme rozhodovať my, a nie Brusel!</strong></p>
+        </main>
+
+    </div>
+
+    <footer>
+        <p><strong>Jakub Naod</strong> &copy; 2026. Bez cenzúry.</p>
+    </footer>
+
+</body>
+</html>
